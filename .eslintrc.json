@@ -18,7 +18,7 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react"],
-  "ignorePatterns": ["/*config.ts"],
+  "ignorePatterns": ["/*config.ts", "/*Setup.js"],
   "rules": {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
