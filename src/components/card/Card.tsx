@@ -1,0 +1,40 @@
+import { useState, useRef } from "react";
+import useElementWidth from "../../hooks/useElementWidth";
+import styles from "./Card.module.scss";
+
+const { card, front, back, hidden, inverted } = styles;
+
+type CardProps = {
+  title: string;
+  definition: string;
+  value: string;
+};
+
+function Card({ title, definition, value }: CardProps) {
+  const [isFront, setIsFront] = useState(true);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const cardWidth = useElementWidth(cardRef);
+  const fontSize = cardWidth ? Math.round(cardWidth / 10) : 20;
+
+  return (
+    <div className={card} ref={cardRef} style={{ fontSize }}>
+      <div className={`${front} ${isFront ? "" : hidden}`}>
+        <h2>{title}</h2>
+        <p>{value}</p>
+      </div>
+      <div className={`${back} ${isFront ? hidden : ""}`}>
+        <h3>Stand for</h3>
+        <p>{definition}</p>
+      </div>
+      <button type="button" onClick={() => setIsFront(!isFront)}>
+        <img
+          src="src/media/flip.svg"
+          alt="#"
+          className={isFront ? inverted : ""}
+        />
+      </button>
+    </div>
+  );
+}
+
+export default Card;

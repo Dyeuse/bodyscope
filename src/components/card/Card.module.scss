@@ -1,0 +1,75 @@
+@use "../../sass/mixins" as m;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 150px;
+  max-width: 450px;
+  aspect-ratio: 1/1;
+  @include m.border();
+
+  .front,
+  .back {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15%;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    position: absolute;
+    transition: 1s ease-in-out, font-size 0ms;
+    border-radius: 5px;
+    padding: 10px;
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  .front {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    h2 {
+      font-size: 2em;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 2em;
+    }
+  }
+
+  .back {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    h3 {
+      font-size: 1.5em;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.2;
+    }
+  }
+
+  button {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    transition: 0.05s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:active {
+      transform: scale(0.8);
+    }
+    img {
+      width: 1.3em;
+      transition: 1s ease-in-out, width height 0ms;
+    }
+    img.inverted {
+      filter: invert(1);
+    }
+  }
+}
