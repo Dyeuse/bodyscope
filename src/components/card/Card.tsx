@@ -18,18 +18,18 @@ function Card({ title, definition, value }: CardProps) {
 
   return (
     <div className={card} ref={cardRef} style={{ fontSize }}>
-      <div className={`${front} ${isFront ? "" : hidden}`}>
+      <div className={`${front} ${isFront ? "" : hidden}`} data-testid="front">
         <h2>{title}</h2>
         <p>{value}</p>
       </div>
-      <div className={`${back} ${isFront ? hidden : ""}`}>
+      <div className={`${back} ${isFront ? hidden : ""}`} data-testid="back">
         <h3>Stand for</h3>
         <p>{definition}</p>
       </div>
       <button type="button" onClick={() => setIsFront(!isFront)}>
         <img
           src="src/media/flip.svg"
-          alt="#"
+          alt="Double arrows"
           className={isFront ? inverted : ""}
         />
       </button>
