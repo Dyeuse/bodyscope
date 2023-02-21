@@ -1,0 +1,25 @@
+.grid {
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "c1"
+    "c2"
+    "c3"
+    "c4"
+    "c5"
+    / 1fr;
+  @media (min-width: 300px) {
+    grid-template:
+      "c1 c1 c2 c2"
+      "c3 c3 c4 c4"
+      ". c5 c5 ."
+      / 1fr 1fr 1fr 1fr;
+  }
+  @media (min-width: 600px) {
+    grid-template:
+      "c1 c1 c2 c2 c3 c3"
+      ". c4 c4 c5 c5 ."
+      / 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}

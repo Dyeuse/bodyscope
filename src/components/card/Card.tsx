@@ -8,16 +8,18 @@ type CardProps = {
   title: string;
   definition: string;
   value: string;
+  position: string;
 };
 
-function Card({ title, definition, value }: CardProps) {
+function Card({ title, definition, value, position }: CardProps) {
   const [isFront, setIsFront] = useState(true);
   const cardRef = useRef<HTMLDivElement>(null);
   const cardWidth = useElementWidth(cardRef);
   const fontSize = cardWidth ? Math.round(cardWidth / 10) : 20;
+  const initStyle = { fontSize, gridArea: `c${position}` };
 
   return (
-    <div className={card} ref={cardRef} style={{ fontSize }}>
+    <div className={card} ref={cardRef} style={initStyle}>
       <div className={`${front} ${isFront ? "" : hidden}`} data-testid="front">
         <h2>{title}</h2>
         <p>{value}</p>
