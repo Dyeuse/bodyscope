@@ -1,14 +1,10 @@
 import styles from "./CardsDisplayer.module.scss";
+import { TupleWith5ReactNodes } from "../../types/TupleOfNItems";
 
 const { grid } = styles;
 
-interface FixedLengthArray<T, L extends number> extends Array<T> {
-  0: T;
-  length: L;
-}
-
 type CardsDisplayerProps = {
-  children: FixedLengthArray<JSX.Element, 5>;
+  children: TupleWith5ReactNodes;
 };
 
 function CardsDisplayer({ children }: CardsDisplayerProps) {
