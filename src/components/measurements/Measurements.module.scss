@@ -1,0 +1,30 @@
+@use "../../sass/mixins" as m;
+@use "../../sass/variables" as v;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  color: v.$main-color;
+  min-width: 260px;
+  max-width: 600px;
+  @include m.border;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  input {
+    @include m.number-input;
+    font-size: inherit;
+  }
+
+  label {
+    font-style: italic;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
