@@ -1,0 +1,40 @@
+@use "../../sass/mixins" as m;
+
+.container {
+  @include m.data-user-container;
+
+  .interRadioWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .intraRadioWrapper {
+    @include m.border;
+    width: 45%;
+    min-width: 200px;
+    div:first-child {
+      margin-bottom: 5%;
+    }
+    label {
+      text-transform: capitalize;
+    }
+    input {
+      font-size: inherit;
+      width: 0.7em;
+      height: 0.7em;
+    }
+  }
+
+  .selectWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  select {
+    font-size: 0.7em;
+  }
+}

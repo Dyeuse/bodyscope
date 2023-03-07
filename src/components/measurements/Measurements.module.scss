@@ -2,14 +2,7 @@
 @use "../../sass/variables" as v;
 
 .container {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  padding: 10px;
-  color: v.$main-color;
-  min-width: 260px;
-  max-width: 600px;
-  @include m.border;
+  @include m.data-user-container;
 
   div {
     display: flex;

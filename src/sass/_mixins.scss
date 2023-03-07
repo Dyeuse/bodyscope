@@ -20,3 +20,14 @@
     outline: 2px solid rgba(v.$main-color, 0.2);
   }
 }
+
+@mixin data-user-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  min-width: 260px;
+  max-width: 600px;
+  color: v.$main-color;
+  @include border;
+}
