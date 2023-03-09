@@ -1,0 +1,28 @@
+@use "../../sass/mixins" as m;
+@use "../../sass/variables" as v;
+
+.mainContainer {
+  min-height: 100vh;
+  padding: 20px;
+  background: v.$main-bg;
+  color: v.$main-color;
+
+  .appWrapper {
+    @include m.transparent;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: v.$main-shadow;
+    padding: 20px;
+    max-width: 900px;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
