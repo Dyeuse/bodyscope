@@ -1,0 +1,31 @@
+@use "../../sass/mixins" as m;
+@use "../../sass/variables" as v;
+
+.formContainer {
+  @include m.transparent;
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  border-radius: 5px;
+  box-shadow: v.$main-shadow;
+
+  .dataWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  button {
+    @include m.light-bg;
+    width: fit-content;
+    margin: 20px auto;
+    color: v.$secondary-color;
+    padding: 8px 10px;
+    box-shadow: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+}

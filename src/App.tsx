@@ -1,17 +1,15 @@
 import "./App.css";
-import Options from "./components/options/Options";
-import Measurements from "./components/measurements/Measurements";
+import Form from "./components/form/Form";
 import CardsDisplayer from "./components/cardsDisplayer/CardsDisplayer";
 import { get5FakeCards } from "./utils/fakeCards";
 
 function App() {
   return (
-    <>
+    <div className="container">
       <h1>BodyScope</h1>
-      <Options />
-      <Measurements />
+      <Form />
       <CardsDisplayer>{get5FakeCards()}</CardsDisplayer>
-    </>
+    </div>
   );
 }
 

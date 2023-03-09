@@ -2,7 +2,7 @@ import { useRef } from "react";
 import useElementWidth from "../../hooks/useElementWidth";
 import styles from "./Measurements.module.scss";
 
-const { container } = styles;
+const { measurementsContainer } = styles;
 
 type MeasurementProps = {
   title: string;
@@ -26,7 +26,7 @@ function Measurements() {
   const fontSize = containerWidth ? Math.round(containerWidth / 15) : 20;
   const initStyle = { fontSize };
   return (
-    <div className={container} ref={containerRef} style={initStyle}>
+    <div className={measurementsContainer} ref={containerRef} style={initStyle}>
       <Measurement title="height" min={100} max={220}>
         height (cm)
       </Measurement>

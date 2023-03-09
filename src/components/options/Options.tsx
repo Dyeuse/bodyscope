@@ -5,7 +5,7 @@ import { activityFactors, bodyFat } from "./selectableData";
 import useElementWidth from "../../hooks/useElementWidth";
 import styles from "./Options.module.scss";
 
-const { container, interRadioWrapper } = styles;
+const { optionsContainer, interRadioWrapper } = styles;
 
 function Options() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,7 +14,7 @@ function Options() {
   const initStyle = { fontSize };
 
   return (
-    <div className={container} ref={containerRef} style={initStyle}>
+    <div className={optionsContainer} ref={containerRef} style={initStyle}>
       <div className={interRadioWrapper}>
         <RadioOptions name="language" choice1="english" choice2="français" />
         <RadioOptions name="gender" choice1="male" choice2="female" />
