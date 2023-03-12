@@ -5,15 +5,13 @@ describe("Options component testing suite", () => {
   it("should render the Options component", () => {
     render(<Options />);
 
-    const english = screen.getByText(/english/i);
-    const female = screen.getByText(/female/i);
-    const body = screen.getByText(/body fat percentage/i);
-    const sedentary = screen.getByText(/sedentary/i);
+    const female = screen.getByRole("radio", { name: "female" });
+    const activity = screen.getByRole("combobox", {
+      name: "Physical activity",
+    });
 
-    expect(english).toBeVisible();
     expect(female).toBeVisible();
-    expect(body).toBeVisible();
-    expect(sedentary).toBeVisible();
+    expect(activity).toBeVisible();
   });
 
   it("should match with the previous snapshot", () => {
