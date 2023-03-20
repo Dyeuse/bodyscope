@@ -92,30 +92,6 @@ describe("Options component testing suite", () => {
                 class="_selectWrapper_e7a281"
               >
                 <label
-                  for="bodyFat"
-                >
-                  Body Fat Percentage
-                </label>
-                <select
-                  id="bodyFat"
-                  name="bodyFat"
-                >
-                  <option
-                    value="auto"
-                  >
-                    auto calc
-                  </option>
-                  <option
-                    value="specific"
-                  >
-                    specific
-                  </option>
-                </select>
-              </div>
-              <div
-                class="_selectWrapper_e7a281"
-              >
-                <label
                   for="activity"
                 >
                   Physical activity
@@ -148,6 +124,30 @@ describe("Options component testing suite", () => {
                     value="1.9"
                   >
                     extremely active
+                  </option>
+                </select>
+              </div>
+              <div
+                class="_selectWrapper_e7a281"
+              >
+                <label
+                  for="bodyFat"
+                >
+                  Body Fat Percentage
+                </label>
+                <select
+                  id="bodyFat"
+                  name="bodyFat"
+                >
+                  <option
+                    value="auto"
+                  >
+                    auto calc
+                  </option>
+                  <option
+                    value="specific"
+                  >
+                    specific
                   </option>
                 </select>
               </div>
@@ -225,30 +225,6 @@ describe("Options component testing suite", () => {
               class="_selectWrapper_e7a281"
             >
               <label
-                for="bodyFat"
-              >
-                Body Fat Percentage
-              </label>
-              <select
-                id="bodyFat"
-                name="bodyFat"
-              >
-                <option
-                  value="auto"
-                >
-                  auto calc
-                </option>
-                <option
-                  value="specific"
-                >
-                  specific
-                </option>
-              </select>
-            </div>
-            <div
-              class="_selectWrapper_e7a281"
-            >
-              <label
                 for="activity"
               >
                 Physical activity
@@ -281,6 +257,30 @@ describe("Options component testing suite", () => {
                   value="1.9"
                 >
                   extremely active
+                </option>
+              </select>
+            </div>
+            <div
+              class="_selectWrapper_e7a281"
+            >
+              <label
+                for="bodyFat"
+              >
+                Body Fat Percentage
+              </label>
+              <select
+                id="bodyFat"
+                name="bodyFat"
+              >
+                <option
+                  value="auto"
+                >
+                  auto calc
+                </option>
+                <option
+                  value="specific"
+                >
+                  specific
                 </option>
               </select>
             </div>

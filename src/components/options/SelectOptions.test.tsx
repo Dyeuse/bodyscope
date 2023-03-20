@@ -1,11 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import SelectOptions from "./SelectOptions";
-import { bodyFat } from "./selectableData";
 
 describe("SelectOptions component testing suite", () => {
   it("should render a select tag", () => {
     render(
-      <SelectOptions name="bodyFat" data={bodyFat}>
+      <SelectOptions
+        name="bodyFat"
+        options={[
+          { label: "calc auto", value: "auto" },
+          { label: "spécifique", value: "specific" },
+        ]}
+      >
         Body Fat Percentage
       </SelectOptions>
     );
@@ -22,7 +27,13 @@ describe("SelectOptions component testing suite", () => {
 
   it("should match with the previous snapshot", () => {
     const selectOptions = render(
-      <SelectOptions name="bodyFat" data={bodyFat}>
+      <SelectOptions
+        name="bodyFat"
+        options={[
+          { label: "calc auto", value: "auto" },
+          { label: "spécifique", value: "specific" },
+        ]}
+      >
         Body Fat Percentage
       </SelectOptions>
     );
@@ -46,12 +57,12 @@ describe("SelectOptions component testing suite", () => {
                 <option
                   value="auto"
                 >
-                  auto calc
+                  calc auto
                 </option>
                 <option
                   value="specific"
                 >
-                  specific
+                  spécifique
                 </option>
               </select>
             </div>
@@ -73,12 +84,12 @@ describe("SelectOptions component testing suite", () => {
               <option
                 value="auto"
               >
-                auto calc
+                calc auto
               </option>
               <option
                 value="specific"
               >
-                specific
+                spécifique
               </option>
             </select>
           </div>

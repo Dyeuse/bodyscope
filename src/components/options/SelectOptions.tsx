@@ -5,11 +5,11 @@ const { selectWrapper } = styles;
 type SelectOptionsProps = {
   name: string;
   children: string;
-  data: { label: string; value: number | string }[];
+  options: { label: string; value: number | string }[];
 };
 
-function SelectOptions({ name, children, data }: SelectOptionsProps) {
-  const options = data.map(({ label, value }) => (
+function SelectOptions({ name, children, options }: SelectOptionsProps) {
+  const allOptions = options.map(({ label, value }) => (
     <option key={label} value={value}>
       {label}
     </option>
@@ -18,7 +18,7 @@ function SelectOptions({ name, children, data }: SelectOptionsProps) {
     <div className={selectWrapper}>
       <label htmlFor={name}>{children}</label>
       <select name={name} id={name}>
-        {options}
+        {allOptions}
       </select>
     </div>
   );
