@@ -10,7 +10,7 @@ function App() {
     <div className={mainContainer}>
       <div className={appWrapper}>
         <h1>BodyScope</h1>
-        <LanguageContext.Provider value="french">
+        <LanguageContext.Provider value="english">
           <Form />
           <CardsDisplayer>{get5FakeCards()}</CardsDisplayer>
         </LanguageContext.Provider>
