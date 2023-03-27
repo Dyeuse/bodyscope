@@ -3,6 +3,7 @@ import Form from "../form/Form";
 import CardsDisplayer from "../cardsDisplayer/CardsDisplayer";
 import { get5FakeCards } from "../../utils/fakeCards";
 import LanguageContext from "../../contexts/LanguageContext";
+import { UserDataProvider } from "../../contexts/UserDataContext";
 
 const { mainContainer, appWrapper } = styles;
 function App() {
@@ -10,10 +11,12 @@ function App() {
     <div className={mainContainer}>
       <div className={appWrapper}>
         <h1>BodyScope</h1>
-        <LanguageContext.Provider value="english">
-          <Form />
-          <CardsDisplayer>{get5FakeCards()}</CardsDisplayer>
-        </LanguageContext.Provider>
+        <UserDataProvider>
+          <LanguageContext.Provider value="english">
+            <Form />
+            <CardsDisplayer>{get5FakeCards()}</CardsDisplayer>
+          </LanguageContext.Provider>
+        </UserDataProvider>
       </div>
     </div>
   );

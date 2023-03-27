@@ -1,5 +1,17 @@
 type MeasurementsTextType = {
-  [index: string]: { name: string; title: string; min: number; max: number }[];
+  [index: string]: {
+    name:
+      | "gender"
+      | "bodyFat"
+      | "activity"
+      | "height"
+      | "weight"
+      | "waist"
+      | "neck";
+    title: string;
+    min: number;
+    max: number;
+  }[];
 };
 
 const measurementsTexts: MeasurementsTextType = {

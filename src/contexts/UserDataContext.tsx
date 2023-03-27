@@ -10,58 +10,61 @@ type UserDataType = {
   gender: string;
   activity: string;
   bodyFat: string;
-  height: number | null;
-  weight: number | null;
-  waist: number | null;
-  neck: number | null;
+  height: string;
+  weight: string;
+  waist: string;
+  neck: string;
 };
 
-type ActionType =
-  | { type: "getGender"; gender: string }
-  | { type: "getBodyFat"; bodyFat: string }
-  | { type: "getActivity"; activity: string }
-  | { type: "getHeight"; height: number }
-  | { type: "getWeight"; weight: number }
-  | { type: "getWaist"; waist: number }
-  | { type: "getNeck"; neck: number };
-
-const UserDataContext = createContext<null | UserDataType>(null);
-
-const UserDataDispatchContext = createContext<null | Dispatch<ActionType>>(
-  null
-);
+type ActionType = {
+  type:
+    | "gender"
+    | "bodyFat"
+    | "activity"
+    | "height"
+    | "weight"
+    | "waist"
+    | "neck";
+  [index: string]: string;
+};
 
 const initialUserData: UserDataType = {
   gender: "male",
   activity: "moderately",
   bodyFat: "auto calc",
-  height: null,
-  weight: null,
-  waist: null,
-  neck: null,
+  height: "",
+  weight: "",
+  waist: "",
+  neck: "",
 };
+
+const UserDataContext = createContext(initialUserData);
+
+const UserDataDispatchContext = createContext<null | Dispatch<ActionType>>(
+  null
+);
 
 function userDataReducer(userData: UserDataType, action: ActionType) {
   switch (action.type) {
-    case "getGender": {
+    case "gender": {
       return { ...userData, gender: action.gender };
     }
-    case "getBodyFat": {
+    case "bodyFat": {
       return { ...userData, bodyFat: action.bodyFat };
     }
-    case "getActivity": {
+    case "activity": {
       return { ...userData, activity: action.activity };
     }
-    case "getHeight": {
+    case "height": {
       return { ...userData, height: action.height };
     }
-    case "getWeight": {
+    case "weight": {
       return { ...userData, weight: action.weight };
     }
-    case "getWaist": {
+    case "waist": {
       return { ...userData, waist: action.waist };
     }
-    case "getNeck": {
+    case "neck": {
       return { ...userData, neck: action.neck };
     }
     default: {
@@ -87,5 +90,9 @@ export function useUserData() {
 }
 
 export function useUserDataDispatch() {
-  return useContext(UserDataDispatchContext);
+  const context = useContext(UserDataDispatchContext);
+  if (!context) {
+    throw new Error("useUserDataDispatch must not be null");
+  }
+  return context;
 }
