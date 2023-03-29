@@ -7,6 +7,7 @@ import {
 } from "react";
 
 type UserDataType = {
+  language: string;
   gender: string;
   activity: string;
   bodyFat: string;
@@ -14,10 +15,12 @@ type UserDataType = {
   weight: string;
   waist: string;
   neck: string;
+  [index: string]: string;
 };
 
 type ActionType = {
   type:
+    | "language"
     | "gender"
     | "bodyFat"
     | "activity"
@@ -29,6 +32,7 @@ type ActionType = {
 };
 
 const initialUserData: UserDataType = {
+  language: "english",
   gender: "male",
   activity: "moderately",
   bodyFat: "auto calc",
@@ -46,6 +50,9 @@ const UserDataDispatchContext = createContext<null | Dispatch<ActionType>>(
 
 function userDataReducer(userData: UserDataType, action: ActionType) {
   switch (action.type) {
+    case "language": {
+      return { ...userData, language: action.language };
+    }
     case "gender": {
       return { ...userData, gender: action.gender };
     }

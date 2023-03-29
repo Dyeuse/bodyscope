@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import Options from "../options/Options";
 import Measurements from "../measurements/Measurements";
-import LanguageContext from "../../contexts/LanguageContext";
+import { useUserData } from "../../contexts/UserDataContext";
 import styles from "./Form.module.scss";
 
 const { formContainer, dataWrapper } = styles;
@@ -12,7 +11,7 @@ const buttonTexts: { [index: string]: string } = {
 };
 
 function Form() {
-  const language = useContext(LanguageContext);
+  const { language } = useUserData();
 
   return (
     <form className={formContainer}>
