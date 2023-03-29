@@ -1,11 +1,13 @@
 type RadioType = {
-  name: Readonly<string>;
+  name: Readonly<"language" | "gender">;
   choice1: Readonly<string>;
+  value1: Readonly<string>;
   choice2: Readonly<string>;
+  value2: Readonly<string>;
 };
 
 type SelectType = {
-  name: Readonly<string>;
+  name: Readonly<"activity" | "bodyFat">;
   title: Readonly<string>;
   options: {
     label: Readonly<string>;
@@ -23,8 +25,20 @@ type OptionsTextsType = {
 const optionsTexts: OptionsTextsType = {
   english: {
     radios: [
-      { name: "language", choice1: "english", choice2: "français" },
-      { name: "gender", choice1: "male", choice2: "female" },
+      {
+        name: "language",
+        choice1: "english",
+        value1: "english",
+        choice2: "français",
+        value2: "french",
+      },
+      {
+        name: "gender",
+        choice1: "male",
+        value1: "male",
+        choice2: "female",
+        value2: "female",
+      },
     ],
     selects: [
       {
@@ -50,8 +64,20 @@ const optionsTexts: OptionsTextsType = {
   },
   french: {
     radios: [
-      { name: "language", choice1: "english", choice2: "français" },
-      { name: "gender", choice1: "homme", choice2: "femme" },
+      {
+        name: "language",
+        choice1: "english",
+        value1: "english",
+        choice2: "français",
+        value2: "french",
+      },
+      {
+        name: "gender",
+        choice1: "homme",
+        value1: "male",
+        choice2: "femme",
+        value2: "female",
+      },
     ],
     selects: [
       {

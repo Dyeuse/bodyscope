@@ -4,11 +4,19 @@ const { selectWrapper } = styles;
 
 type SelectOptionsProps = {
   name: string;
+  selectedValue: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   children: string;
   options: { label: string; value: number | string }[];
 };
 
-function SelectOptions({ name, children, options }: SelectOptionsProps) {
+function SelectOptions({
+  name,
+  selectedValue,
+  onChange,
+  children,
+  options,
+}: SelectOptionsProps) {
   const allOptions = options.map(({ label, value }) => (
     <option key={label} value={value}>
       {label}
@@ -17,7 +25,7 @@ function SelectOptions({ name, children, options }: SelectOptionsProps) {
   return (
     <div className={selectWrapper}>
       <label htmlFor={name}>{children}</label>
-      <select name={name} id={name}>
+      <select name={name} value={selectedValue} onChange={onChange} id={name}>
         {allOptions}
       </select>
     </div>

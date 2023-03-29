@@ -1,6 +1,5 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import Measurement from "./Measurement";
-import LanguageContext from "../../contexts/LanguageContext";
 import measurementsTexts from "./measurementsTexts";
 import useElementWidth from "../../hooks/useElementWidth";
 import {
@@ -12,7 +11,6 @@ import styles from "./Measurements.module.scss";
 const { measurementsContainer } = styles;
 
 function Measurements() {
-  const language = useContext(LanguageContext);
   const userData = useUserData();
   const dispatch = useUserDataDispatch();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,21 +18,23 @@ function Measurements() {
   const fontSize = containerWidth ? Math.round(containerWidth / 15) : 20;
   const initStyle = { fontSize };
 
-  const measurements = measurementsTexts[language].map((measurement) => {
-    const { name, title, min, max } = measurement;
-    return (
-      <Measurement
-        key={name}
-        name={name}
-        value={userData[name]}
-        onChange={(e) => dispatch({ type: name, [name]: e.target.value })}
-        min={min}
-        max={max}
-      >
-        {title}
-      </Measurement>
-    );
-  });
+  const measurements = measurementsTexts[userData.language].map(
+    (measurement) => {
+      const { name, title, min, max } = measurement;
+      return (
+        <Measurement
+          key={name}
+          name={name}
+          value={userData[name]}
+          onChange={(e) => dispatch({ type: name, [name]: e.target.value })}
+          min={min}
+          max={max}
+        >
+          {title}
+        </Measurement>
+      );
+    }
+  );
 
   return (
     <div className={measurementsContainer} ref={containerRef} style={initStyle}>
