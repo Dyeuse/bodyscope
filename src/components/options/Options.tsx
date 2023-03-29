@@ -50,10 +50,23 @@ function Options() {
     );
   });
 
+  const specificBF = (
+    <input
+      type="number"
+      value={userData.specificBF}
+      onChange={(e) =>
+        dispatch({ type: "specificBF", specificBF: e.target.value })
+      }
+      name="specificBF"
+      min={0}
+      max={60}
+    />
+  );
   return (
     <div className={optionsContainer} ref={containerRef} style={initStyle}>
       <div className={interRadioWrapper}>{radios}</div>
       {selects}
+      {userData.bodyFat === "specific" && specificBF}
     </div>
   );
 }
