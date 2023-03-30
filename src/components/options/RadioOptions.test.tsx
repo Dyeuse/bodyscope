@@ -1,25 +1,37 @@
 import { render, screen } from "@testing-library/react";
 import RadioOptions from "./RadioOptions";
 
+function renderRadioOptions() {
+  return render(
+    <RadioOptions
+      onChange={() => {}}
+      name="gender"
+      choice1="male"
+      value1="male"
+      choice2="female"
+      value2="female"
+      userChoice="male"
+    />
+  );
+}
+
 describe("RadioOptions component testing suite", () => {
   it("should render a set of two radio inputs", () => {
-    render(<RadioOptions name="test" choice1="foo" choice2="baz" />);
-    const foo = screen.getByLabelText(/foo/i, {
+    renderRadioOptions();
+    const male = screen.getByLabelText(/^male$/i, {
       selector: 'input[type="radio"]',
     });
-    const baz = screen.getByLabelText(/baz/i, {
+    const female = screen.getByLabelText(/^female$/i, {
       selector: 'input[type="radio"]',
     });
-    expect(foo).toBeVisible();
-    expect(foo).toBeChecked();
-    expect(baz).toBeVisible();
-    expect(baz).not.toBeChecked();
+    expect(male).toBeVisible();
+    expect(male).toBeChecked();
+    expect(female).toBeVisible();
+    expect(female).not.toBeChecked();
   });
 
   it("should match with the previous snapshot", () => {
-    const radioOptions = render(
-      <RadioOptions name="test" choice1="foo" choice2="baz" />
-    );
+    const radioOptions = renderRadioOptions();
     expect(radioOptions).toMatchInlineSnapshot(`
       {
         "asFragment": [Function],
@@ -31,26 +43,28 @@ describe("RadioOptions component testing suite", () => {
               <div>
                 <input
                   checked=""
-                  id="foo"
-                  name="test"
+                  id="male"
+                  name="gender"
                   type="radio"
+                  value="male"
                 />
                 <label
-                  for="foo"
+                  for="male"
                 >
-                  foo
+                  male
                 </label>
               </div>
               <div>
                 <input
-                  id="baz"
-                  name="test"
+                  id="female"
+                  name="gender"
                   type="radio"
+                  value="female"
                 />
                 <label
-                  for="baz"
+                  for="female"
                 >
-                  baz
+                  female
                 </label>
               </div>
             </div>
@@ -63,26 +77,28 @@ describe("RadioOptions component testing suite", () => {
             <div>
               <input
                 checked=""
-                id="foo"
-                name="test"
+                id="male"
+                name="gender"
                 type="radio"
+                value="male"
               />
               <label
-                for="foo"
+                for="male"
               >
-                foo
+                male
               </label>
             </div>
             <div>
               <input
-                id="baz"
-                name="test"
+                id="female"
+                name="gender"
                 type="radio"
+                value="female"
               />
               <label
-                for="baz"
+                for="female"
               >
-                baz
+                female
               </label>
             </div>
           </div>

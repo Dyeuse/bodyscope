@@ -1,19 +1,25 @@
 import { render, screen } from "@testing-library/react";
 import SelectOptions from "./SelectOptions";
 
+function renderSelectOptions() {
+  return render(
+    <SelectOptions
+      name="bodyFat"
+      options={[
+        { label: "calc auto", value: "auto" },
+        { label: "spécifique", value: "specific" },
+      ]}
+      selectedValue="auto"
+      onChange={() => {}}
+    >
+      Body Fat Percentage
+    </SelectOptions>
+  );
+}
+
 describe("SelectOptions component testing suite", () => {
   it("should render a select tag", () => {
-    render(
-      <SelectOptions
-        name="bodyFat"
-        options={[
-          { label: "calc auto", value: "auto" },
-          { label: "spécifique", value: "specific" },
-        ]}
-      >
-        Body Fat Percentage
-      </SelectOptions>
-    );
+    renderSelectOptions();
 
     const bodyFatSelect = screen.getByLabelText(/Body Fat Percentage/i, {
       selector: "select",
@@ -26,17 +32,7 @@ describe("SelectOptions component testing suite", () => {
   });
 
   it("should match with the previous snapshot", () => {
-    const selectOptions = render(
-      <SelectOptions
-        name="bodyFat"
-        options={[
-          { label: "calc auto", value: "auto" },
-          { label: "spécifique", value: "specific" },
-        ]}
-      >
-        Body Fat Percentage
-      </SelectOptions>
-    );
+    const selectOptions = renderSelectOptions();
     expect(selectOptions).toMatchInlineSnapshot(`
       {
         "asFragment": [Function],

@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import { UserDataProvider } from "../../contexts/UserDataContext";
 import Measurements from "./Measurements";
 
 describe("Measurements component testing suite", () => {
   it("should render a set of measurement fields", () => {
-    render(<Measurements />);
+    render(
+      <UserDataProvider>
+        <Measurements />
+      </UserDataProvider>
+    );
     const inputs = screen.getAllByRole("spinbutton");
     const height = screen.getByLabelText(/height/i, { selector: "input" });
     expect(inputs.length).toEqual(4);
@@ -11,7 +16,11 @@ describe("Measurements component testing suite", () => {
   });
 
   it("should match with the previous snapshot", () => {
-    const measurements = render(<Measurements />);
+    const measurements = render(
+      <UserDataProvider>
+        <Measurements />
+      </UserDataProvider>
+    );
     expect(measurements).toMatchInlineSnapshot(`
       {
         "asFragment": [Function],
@@ -33,6 +42,7 @@ describe("Measurements component testing suite", () => {
                   min="100"
                   name="height"
                   type="number"
+                  value=""
                 />
               </div>
               <div>
@@ -47,6 +57,7 @@ describe("Measurements component testing suite", () => {
                   min="30"
                   name="weight"
                   type="number"
+                  value=""
                 />
               </div>
               <div>
@@ -61,6 +72,7 @@ describe("Measurements component testing suite", () => {
                   min="30"
                   name="waist"
                   type="number"
+                  value=""
                 />
               </div>
               <div>
@@ -75,6 +87,7 @@ describe("Measurements component testing suite", () => {
                   min="20"
                   name="neck"
                   type="number"
+                  value=""
                 />
               </div>
             </div>
@@ -97,6 +110,7 @@ describe("Measurements component testing suite", () => {
                 min="100"
                 name="height"
                 type="number"
+                value=""
               />
             </div>
             <div>
@@ -111,6 +125,7 @@ describe("Measurements component testing suite", () => {
                 min="30"
                 name="weight"
                 type="number"
+                value=""
               />
             </div>
             <div>
@@ -125,6 +140,7 @@ describe("Measurements component testing suite", () => {
                 min="30"
                 name="waist"
                 type="number"
+                value=""
               />
             </div>
             <div>
@@ -139,6 +155,7 @@ describe("Measurements component testing suite", () => {
                 min="20"
                 name="neck"
                 type="number"
+                value=""
               />
             </div>
           </div>

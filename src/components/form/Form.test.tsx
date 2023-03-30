@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import { UserDataProvider } from "../../contexts/UserDataContext";
 import Form from "./Form";
 
 describe("Form component testing suite", () => {
   it("should render a form ", () => {
-    render(<Form />);
+    render(
+      <UserDataProvider>
+        <Form />
+      </UserDataProvider>
+    );
 
     const male = screen.getByRole("radio", { name: "male" });
     const body = screen.getByRole("combobox", { name: "Body Fat Percentage" });
@@ -18,7 +23,11 @@ describe("Form component testing suite", () => {
   });
 
   it("should match with the previous snapshot", () => {
-    const form = render(<Form />);
+    const form = render(
+      <UserDataProvider>
+        <Form />
+      </UserDataProvider>
+    );
 
     expect(form).toMatchInlineSnapshot(`
       {
@@ -47,6 +56,7 @@ describe("Form component testing suite", () => {
                           id="english"
                           name="language"
                           type="radio"
+                          value="english"
                         />
                         <label
                           for="english"
@@ -59,6 +69,7 @@ describe("Form component testing suite", () => {
                           id="français"
                           name="language"
                           type="radio"
+                          value="french"
                         />
                         <label
                           for="français"
@@ -76,6 +87,7 @@ describe("Form component testing suite", () => {
                           id="male"
                           name="gender"
                           type="radio"
+                          value="male"
                         />
                         <label
                           for="male"
@@ -88,6 +100,7 @@ describe("Form component testing suite", () => {
                           id="female"
                           name="gender"
                           type="radio"
+                          value="female"
                         />
                         <label
                           for="female"
@@ -177,6 +190,7 @@ describe("Form component testing suite", () => {
                       min="100"
                       name="height"
                       type="number"
+                      value=""
                     />
                   </div>
                   <div>
@@ -191,6 +205,7 @@ describe("Form component testing suite", () => {
                       min="30"
                       name="weight"
                       type="number"
+                      value=""
                     />
                   </div>
                   <div>
@@ -205,6 +220,7 @@ describe("Form component testing suite", () => {
                       min="30"
                       name="waist"
                       type="number"
+                      value=""
                     />
                   </div>
                   <div>
@@ -219,6 +235,7 @@ describe("Form component testing suite", () => {
                       min="20"
                       name="neck"
                       type="number"
+                      value=""
                     />
                   </div>
                 </div>
@@ -254,6 +271,7 @@ describe("Form component testing suite", () => {
                         id="english"
                         name="language"
                         type="radio"
+                        value="english"
                       />
                       <label
                         for="english"
@@ -266,6 +284,7 @@ describe("Form component testing suite", () => {
                         id="français"
                         name="language"
                         type="radio"
+                        value="french"
                       />
                       <label
                         for="français"
@@ -283,6 +302,7 @@ describe("Form component testing suite", () => {
                         id="male"
                         name="gender"
                         type="radio"
+                        value="male"
                       />
                       <label
                         for="male"
@@ -295,6 +315,7 @@ describe("Form component testing suite", () => {
                         id="female"
                         name="gender"
                         type="radio"
+                        value="female"
                       />
                       <label
                         for="female"
@@ -384,6 +405,7 @@ describe("Form component testing suite", () => {
                     min="100"
                     name="height"
                     type="number"
+                    value=""
                   />
                 </div>
                 <div>
@@ -398,6 +420,7 @@ describe("Form component testing suite", () => {
                     min="30"
                     name="weight"
                     type="number"
+                    value=""
                   />
                 </div>
                 <div>
@@ -412,6 +435,7 @@ describe("Form component testing suite", () => {
                     min="30"
                     name="waist"
                     type="number"
+                    value=""
                   />
                 </div>
                 <div>
@@ -426,6 +450,7 @@ describe("Form component testing suite", () => {
                     min="20"
                     name="neck"
                     type="number"
+                    value=""
                   />
                 </div>
               </div>

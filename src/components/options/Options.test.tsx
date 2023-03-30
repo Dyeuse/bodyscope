@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import { UserDataProvider } from "../../contexts/UserDataContext";
 import Options from "./Options";
 
 describe("Options component testing suite", () => {
   it("should render the Options component", () => {
-    render(<Options />);
+    render(
+      <UserDataProvider>
+        <Options />
+      </UserDataProvider>
+    );
 
     const female = screen.getByRole("radio", { name: "female" });
     const activity = screen.getByRole("combobox", {
@@ -15,7 +20,11 @@ describe("Options component testing suite", () => {
   });
 
   it("should match with the previous snapshot", () => {
-    const options = render(<Options />);
+    const options = render(
+      <UserDataProvider>
+        <Options />
+      </UserDataProvider>
+    );
 
     expect(options).toMatchInlineSnapshot(`
       {
@@ -38,6 +47,7 @@ describe("Options component testing suite", () => {
                       id="english"
                       name="language"
                       type="radio"
+                      value="english"
                     />
                     <label
                       for="english"
@@ -50,6 +60,7 @@ describe("Options component testing suite", () => {
                       id="français"
                       name="language"
                       type="radio"
+                      value="french"
                     />
                     <label
                       for="français"
@@ -67,6 +78,7 @@ describe("Options component testing suite", () => {
                       id="male"
                       name="gender"
                       type="radio"
+                      value="male"
                     />
                     <label
                       for="male"
@@ -79,6 +91,7 @@ describe("Options component testing suite", () => {
                       id="female"
                       name="gender"
                       type="radio"
+                      value="female"
                     />
                     <label
                       for="female"
@@ -171,6 +184,7 @@ describe("Options component testing suite", () => {
                     id="english"
                     name="language"
                     type="radio"
+                    value="english"
                   />
                   <label
                     for="english"
@@ -183,6 +197,7 @@ describe("Options component testing suite", () => {
                     id="français"
                     name="language"
                     type="radio"
+                    value="french"
                   />
                   <label
                     for="français"
@@ -200,6 +215,7 @@ describe("Options component testing suite", () => {
                     id="male"
                     name="gender"
                     type="radio"
+                    value="male"
                   />
                   <label
                     for="male"
@@ -212,6 +228,7 @@ describe("Options component testing suite", () => {
                     id="female"
                     name="gender"
                     type="radio"
+                    value="female"
                   />
                   <label
                     for="female"
