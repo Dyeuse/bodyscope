@@ -5,6 +5,7 @@ import {
   Dispatch,
   useContext,
 } from "react";
+import { results } from "../utils/formulas";
 
 type UserDataType = {
   language: string;
@@ -16,7 +17,8 @@ type UserDataType = {
   weight: string;
   waist: string;
   neck: string;
-  [index: string]: string;
+  results: object;
+  [index: string]: string | object;
 };
 
 type ActionType = {
@@ -29,7 +31,8 @@ type ActionType = {
     | "height"
     | "weight"
     | "waist"
-    | "neck";
+    | "neck"
+    | "calculate";
   [index: string]: string;
 };
 
@@ -43,6 +46,7 @@ const initialUserData: UserDataType = {
   weight: "",
   waist: "",
   neck: "",
+  results: {},
 };
 
 const UserDataContext = createContext(initialUserData);
@@ -79,6 +83,10 @@ function userDataReducer(userData: UserDataType, action: ActionType) {
     }
     case "neck": {
       return { ...userData, neck: action.neck };
+    }
+    case "calculate": {
+      const allResults = results(userData);
+      return { ...userData, results: { ...allResults } };
     }
     default: {
       return userData;

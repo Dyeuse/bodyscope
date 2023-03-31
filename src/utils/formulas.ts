@@ -38,7 +38,12 @@ export function isInNeckRange(value: number) {
 
 // BMI => Body Mass Index
 
-export function calcBMI(height: number, weight: number) {
+type BMIType = {
+  height: number;
+  weight: number;
+};
+
+export function calcBMI({ height, weight }: BMIType) {
   const BMI = weight / (height / 100) ** 2;
   return round(BMI, 1);
 }
@@ -66,7 +71,7 @@ function calcFemaleBFP({ height, waist, neck }: BFPType) {
 export function calcBFP<T extends BFPType & { gender: string }>(
   personalData: T
 ) {
-  return personalData.gender === "mal"
+  return personalData.gender === "male"
     ? calcMaleBFP(personalData)
     : calcFemaleBFP(personalData);
 }
@@ -100,7 +105,7 @@ export function calcFFMI(
 
 // Katch–McArdle formula (resting daily energy expenditure)
 
-export function calcBMR(weight: number, BFP: number) {
+export function calcBMR({ weight }: { weight: number }, BFP: number) {
   const BMR = 370 + 21.6 * calcFatFreeMass(weight, BFP);
   return round(BMR);
 }
@@ -117,7 +122,32 @@ export function calcBMR(weight: number, BFP: number) {
   scr: Kansas State University
 */
 
-export function calcTDEE(multiplier: number, BMR: number) {
+export function calcTDEE({ multiplier }: { multiplier: number }, BMR: number) {
   const TDEE = BMR * multiplier;
   return round(TDEE);
+}
+
+type ResultsType = {
+  height: string;
+  weight: string;
+  waist: string;
+  neck: string;
+  gender: string;
+  activity: string;
+};
+
+export function results({
+  height,
+  weight,
+  waist,
+  neck,
+  gender,
+  activity: multiplier,
+}: ResultsType) {
+  const BMI = calcBMI({ height: +height, weight: +weight });
+  const BFP = calcBFP({ height: +height, waist: +waist, neck: +neck, gender });
+  const FFMI = calcFFMI({ height: +height, weight: +weight }, BFP);
+  const BMR = calcBMR({ weight: +weight }, BFP);
+  const TDEE = calcTDEE({ multiplier: +multiplier }, BMR);
+  return { BMI, BFP, FFMI, BMR, TDEE };
 }

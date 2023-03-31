@@ -33,8 +33,8 @@ describe("Function used to check if a value is in a range", () => {
 
 describe("BMI => Body Mass Index", () => {
   it("should calculate the BMI", () => {
-    expect(calcBMI(180, 75)).toEqual(23.1);
-    expect(calcBMI(165, 55)).toEqual(20.2);
+    expect(calcBMI({ height: 180, weight: 75 })).toEqual(23.1);
+    expect(calcBMI({ height: 165, weight: 55 })).toEqual(20.2);
   });
 });
 
@@ -43,7 +43,7 @@ describe("BFP => Body Fat Percentage", () => {
     const userData1 = { height: 182, waist: 84, neck: 38, gender: "male" };
     const userData2 = { height: 167, waist: 78, neck: 34, gender: "female" };
 
-    expect(calcBFP(userData1)).toEqual(23.89);
+    expect(calcBFP(userData1)).toEqual(14.8);
     expect(calcBFP(userData2)).toEqual(24.7);
   });
 });
@@ -57,14 +57,14 @@ describe("FFMI (Normalized) => Fat-Free Mass Index", () => {
 
 describe("BMR => Basal Metabolic Rate", () => {
   it("should calculate the BMR", () => {
-    expect(calcBMR(72, 22)).toEqual(1583);
-    expect(calcBMR(54, 28)).toEqual(1210);
+    expect(calcBMR({ weight: 72 }, 22)).toEqual(1583);
+    expect(calcBMR({ weight: 54 }, 28)).toEqual(1210);
   });
 });
 
 describe("TDEE => Total Daily Energy Expenditure", () => {
   it("should calculate the TDEE", () => {
-    expect(calcTDEE(1.55, 1450)).toEqual(2248);
-    expect(calcTDEE(1.2, 1625)).toEqual(1950);
+    expect(calcTDEE({ multiplier: 1.55 }, 1450)).toEqual(2248);
+    expect(calcTDEE({ multiplier: 1.2 }, 1625)).toEqual(1950);
   });
 });
