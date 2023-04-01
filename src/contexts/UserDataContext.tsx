@@ -12,7 +12,7 @@ type UserDataType = {
   gender: string;
   activity: string;
   bodyFat: string;
-  specificBF: string;
+  specificBFP: string;
   height: string;
   weight: string;
   waist: string;
@@ -33,7 +33,7 @@ type ActionType = {
     | "language"
     | "gender"
     | "bodyFat"
-    | "specificBF"
+    | "specificBFP"
     | "activity"
     | "height"
     | "weight"
@@ -48,7 +48,7 @@ const initialUserData: UserDataType = {
   gender: "male",
   activity: "1.55",
   bodyFat: "auto",
-  specificBF: "",
+  specificBFP: "",
   height: "",
   weight: "",
   waist: "",
@@ -79,8 +79,8 @@ function userDataReducer(userData: UserDataType, action: ActionType) {
     case "bodyFat": {
       return { ...userData, bodyFat: action.bodyFat };
     }
-    case "specificBF": {
-      return { ...userData, specificBF: action.specificBF };
+    case "specificBFP": {
+      return { ...userData, specificBFP: action.specificBFP };
     }
     case "activity": {
       return { ...userData, activity: action.activity };

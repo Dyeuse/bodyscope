@@ -134,6 +134,7 @@ type ResultsType = {
   neck: string;
   gender: string;
   activity: string;
+  specificBFP: string;
 };
 
 export function results({
@@ -143,9 +144,13 @@ export function results({
   neck,
   gender,
   activity: multiplier,
+  specificBFP,
 }: ResultsType) {
   const BMI = calcBMI({ height: +height, weight: +weight });
-  const BFP = calcBFP({ height: +height, waist: +waist, neck: +neck, gender });
+  const BFP =
+    specificBFP !== ""
+      ? +specificBFP
+      : calcBFP({ height: +height, waist: +waist, neck: +neck, gender });
   const FFMI = calcFFMI({ height: +height, weight: +weight }, BFP);
   const BMR = calcBMR({ weight: +weight }, BFP);
   const TDEE = calcTDEE({ multiplier: +multiplier }, BMR);
