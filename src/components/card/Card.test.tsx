@@ -5,7 +5,8 @@ describe("Card component testing suite", () => {
   it("should render a functional card", () => {
     render(
       <Card
-        title="Test"
+        title1="Test"
+        title2="Stand for"
         definition="A short explanation or definition"
         value="88"
         position="1"
@@ -34,7 +35,8 @@ describe("Card component testing suite", () => {
   it("should match with the previous snapshot", () => {
     const card = render(
       <Card
-        title="Test"
+        title1="Test"
+        title2="Stand for"
         definition="A short explanation or definition"
         value="88"
         position="1"

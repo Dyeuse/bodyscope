@@ -17,7 +17,14 @@ type UserDataType = {
   weight: string;
   waist: string;
   neck: string;
-  results: object;
+  results: {
+    BMI: string | number;
+    BFP: string | number;
+    FFMI: string | number;
+    BMR: string | number;
+    TDEE: string | number;
+    [index: string]: string | number;
+  };
   [index: string]: string | object;
 };
 
@@ -46,7 +53,13 @@ const initialUserData: UserDataType = {
   weight: "",
   waist: "",
   neck: "",
-  results: {},
+  results: {
+    BMI: "---",
+    BFP: "---",
+    FFMI: "---",
+    BMR: "---",
+    TDEE: "---",
+  },
 };
 
 const UserDataContext = createContext(initialUserData);

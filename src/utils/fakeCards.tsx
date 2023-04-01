@@ -8,7 +8,8 @@ export function getFakeCards(n: number): readonly ReactNode[] {
     cards.push(
       <Card
         key={`Test${c}`}
-        title={`Test${c}`}
+        title1={`Test${c}`}
+        title2="Stand for"
         definition={`Test${c} / short explanation or definition`}
         value={`${c}${c}`}
         position={`${c}`}

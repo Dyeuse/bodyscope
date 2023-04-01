@@ -1,31 +1,29 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import CardsDisplayer from "./CardsDisplayer";
-import { get5FakeCards } from "../../utils/fakeCards";
 
 describe("CardsDisplayer component testing suite", () => {
   it("should render a functional cards displayer", () => {
-    render(<CardsDisplayer>{get5FakeCards()}</CardsDisplayer>);
+    render(<CardsDisplayer />);
 
-    const frontTitles = screen.getAllByRole("heading", { name: /Test/ });
+    const allTitles = screen.getAllByRole("heading");
     const backTitles = screen.getAllByRole("heading", { name: /Stand for/ });
+    const BMITitle = screen.getByRole("heading", { name: /BMI/ });
     const flipButtons = screen.getAllByAltText(/Double arrows/);
 
-    expect(frontTitles.length).toEqual(5);
+    expect(allTitles.length).toEqual(10);
     expect(backTitles.length).toEqual(5);
     expect(flipButtons.length).toEqual(5);
-    expect(frontTitles[2]).toBeVisible();
-    expect(backTitles[2]).not.toBeVisible();
+    expect(BMITitle).toBeVisible();
+    expect(backTitles[0]).not.toBeVisible();
 
-    fireEvent.click(flipButtons[2]);
+    fireEvent.click(flipButtons[0]);
 
-    expect(frontTitles[2]).not.toBeVisible();
-    expect(backTitles[2]).toBeVisible();
+    expect(BMITitle).not.toBeVisible();
+    expect(backTitles[0]).toBeVisible();
   });
 
   it("should match with the previous snapshot", () => {
-    const cardsDisplayer = render(
-      <CardsDisplayer>{get5FakeCards()}</CardsDisplayer>
-    );
+    const cardsDisplayer = render(<CardsDisplayer />);
 
     expect(cardsDisplayer).toMatchInlineSnapshot(`
       {
@@ -44,10 +42,10 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="front"
                 >
                   <h2>
-                    Test1
+                    BMI
                   </h2>
                   <p>
-                    11
+                    ---
                   </p>
                 </div>
                 <div
@@ -58,7 +56,7 @@ describe("CardsDisplayer component testing suite", () => {
                     Stand for
                   </h3>
                   <p>
-                    Test1 / short explanation or definition
+                    Body Mass Index
                   </p>
                 </div>
                 <button
@@ -80,10 +78,10 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="front"
                 >
                   <h2>
-                    Test2
+                    BFP
                   </h2>
                   <p>
-                    22
+                    ---
                   </p>
                 </div>
                 <div
@@ -94,7 +92,7 @@ describe("CardsDisplayer component testing suite", () => {
                     Stand for
                   </h3>
                   <p>
-                    Test2 / short explanation or definition
+                    Body Fat Percentage
                   </p>
                 </div>
                 <button
@@ -116,10 +114,10 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="front"
                 >
                   <h2>
-                    Test3
+                    FFMI
                   </h2>
                   <p>
-                    33
+                    ---
                   </p>
                 </div>
                 <div
@@ -130,7 +128,7 @@ describe("CardsDisplayer component testing suite", () => {
                     Stand for
                   </h3>
                   <p>
-                    Test3 / short explanation or definition
+                    Fat Free Mass Index (ajusted)
                   </p>
                 </div>
                 <button
@@ -152,10 +150,10 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="front"
                 >
                   <h2>
-                    Test4
+                    BMR
                   </h2>
                   <p>
-                    44
+                    ---
                   </p>
                 </div>
                 <div
@@ -166,7 +164,7 @@ describe("CardsDisplayer component testing suite", () => {
                     Stand for
                   </h3>
                   <p>
-                    Test4 / short explanation or definition
+                    Basal Metabolic Rate
                   </p>
                 </div>
                 <button
@@ -188,10 +186,10 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="front"
                 >
                   <h2>
-                    Test5
+                    TDEE
                   </h2>
                   <p>
-                    55
+                    ---
                   </p>
                 </div>
                 <div
@@ -202,7 +200,7 @@ describe("CardsDisplayer component testing suite", () => {
                     Stand for
                   </h3>
                   <p>
-                    Test5 / short explanation or definition
+                    Total Daily Energy Expenditure
                   </p>
                 </div>
                 <button
@@ -231,10 +229,10 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="front"
               >
                 <h2>
-                  Test1
+                  BMI
                 </h2>
                 <p>
-                  11
+                  ---
                 </p>
               </div>
               <div
@@ -245,7 +243,7 @@ describe("CardsDisplayer component testing suite", () => {
                   Stand for
                 </h3>
                 <p>
-                  Test1 / short explanation or definition
+                  Body Mass Index
                 </p>
               </div>
               <button
@@ -267,10 +265,10 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="front"
               >
                 <h2>
-                  Test2
+                  BFP
                 </h2>
                 <p>
-                  22
+                  ---
                 </p>
               </div>
               <div
@@ -281,7 +279,7 @@ describe("CardsDisplayer component testing suite", () => {
                   Stand for
                 </h3>
                 <p>
-                  Test2 / short explanation or definition
+                  Body Fat Percentage
                 </p>
               </div>
               <button
@@ -303,10 +301,10 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="front"
               >
                 <h2>
-                  Test3
+                  FFMI
                 </h2>
                 <p>
-                  33
+                  ---
                 </p>
               </div>
               <div
@@ -317,7 +315,7 @@ describe("CardsDisplayer component testing suite", () => {
                   Stand for
                 </h3>
                 <p>
-                  Test3 / short explanation or definition
+                  Fat Free Mass Index (ajusted)
                 </p>
               </div>
               <button
@@ -339,10 +337,10 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="front"
               >
                 <h2>
-                  Test4
+                  BMR
                 </h2>
                 <p>
-                  44
+                  ---
                 </p>
               </div>
               <div
@@ -353,7 +351,7 @@ describe("CardsDisplayer component testing suite", () => {
                   Stand for
                 </h3>
                 <p>
-                  Test4 / short explanation or definition
+                  Basal Metabolic Rate
                 </p>
               </div>
               <button
@@ -375,10 +373,10 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="front"
               >
                 <h2>
-                  Test5
+                  TDEE
                 </h2>
                 <p>
-                  55
+                  ---
                 </p>
               </div>
               <div
@@ -389,7 +387,7 @@ describe("CardsDisplayer component testing suite", () => {
                   Stand for
                 </h3>
                 <p>
-                  Test5 / short explanation or definition
+                  Total Daily Energy Expenditure
                 </p>
               </div>
               <button
