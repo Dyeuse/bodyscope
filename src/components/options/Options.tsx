@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import RadioOptions from "./RadioOptions";
 import SelectOptions from "./SelectOptions";
-import optionsTexts from "./optionsTexts";
+import optionsTexts from "../../data/optionsTexts";
 import useElementWidth from "../../hooks/useElementWidth";
 import styles from "./Options.module.scss";
 import {

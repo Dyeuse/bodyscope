@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Measurement from "./Measurement";
-import measurementsTexts from "./measurementsTexts";
+import measurementsTexts from "../../data/measurementsTexts";
 import useElementWidth from "../../hooks/useElementWidth";
 import {
   useUserData,

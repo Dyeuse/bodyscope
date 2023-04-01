@@ -1,6 +1,6 @@
 import Card from "../card/Card";
 import styles from "./CardsDisplayer.module.scss";
-import cardsTexts from "./cardsTexts";
+import cardsTexts from "../../data/cardsTexts";
 import { useUserData } from "../../contexts/UserDataContext";
 
 const { grid } = styles;

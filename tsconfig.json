@@ -16,6 +16,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "src/data/cardsTexts.ts",
+    "src/data/measurementsTexts.ts",
+    "src/data/optionsTexts.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
