@@ -1,8 +1,6 @@
-import { useRef } from "react";
 import RadioOptions from "./RadioOptions";
 import SelectOptions from "./SelectOptions";
 import optionsTexts from "../../data/optionsTexts";
-import useElementWidth from "../../hooks/useElementWidth";
 import styles from "./Options.module.scss";
 import {
   useUserData,
@@ -14,10 +12,6 @@ const { optionsContainer, interRadioWrapper } = styles;
 function Options() {
   const userData = useUserData();
   const dispatch = useUserDataDispatch();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const containerWidth = useElementWidth(containerRef);
-  const fontSize = containerWidth ? Math.round(containerWidth / 15) : 20;
-  const initStyle = { fontSize };
 
   const radios = optionsTexts[userData.language].radios.map((radio) => {
     const { name, choice1, value1, choice2, value2 } = radio;
@@ -63,7 +57,7 @@ function Options() {
     />
   );
   return (
-    <div className={optionsContainer} ref={containerRef} style={initStyle}>
+    <div className={optionsContainer}>
       <div className={interRadioWrapper}>{radios}</div>
       {selects}
       {userData.bodyFat === "specific" && specificBFP}

@@ -28,7 +28,6 @@ describe("Measurements component testing suite", () => {
           <div>
             <div
               class="_measurementsContainer_e7ee1f"
-              style="font-size: 20px;"
             >
               <div>
                 <label
@@ -96,7 +95,6 @@ describe("Measurements component testing suite", () => {
         "container": <div>
           <div
             class="_measurementsContainer_e7ee1f"
-            style="font-size: 20px;"
           >
             <div>
               <label

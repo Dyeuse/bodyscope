@@ -3,13 +3,13 @@ import styles from "./CardsDisplayer.module.scss";
 import cardsTexts from "../../data/cardsTexts";
 import { useUserData } from "../../contexts/UserDataContext";
 
-const { grid } = styles;
+const { cardsContainer } = styles;
 
 function CardsDisplayer() {
   const userData = useUserData();
 
   const cards = cardsTexts[userData.language].map((card) => {
-    const { id, title1, title2, definition, position } = card;
+    const { id, title1, title2, definition } = card;
     const value = userData.results[card.id];
     return (
       <Card
@@ -17,13 +17,12 @@ function CardsDisplayer() {
         title1={title1}
         title2={title2}
         definition={definition}
-        position={position}
         value={value}
       />
     );
   });
 
-  return <div className={grid}>{cards}</div>;
+  return <div className={cardsContainer}>{cards}</div>;
 }
 
 export default CardsDisplayer;

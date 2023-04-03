@@ -1,7 +1,5 @@
-import { useRef } from "react";
 import Measurement from "./Measurement";
 import measurementsTexts from "../../data/measurementsTexts";
-import useElementWidth from "../../hooks/useElementWidth";
 import {
   useUserData,
   useUserDataDispatch,
@@ -13,10 +11,6 @@ const { measurementsContainer } = styles;
 function Measurements() {
   const userData = useUserData();
   const dispatch = useUserDataDispatch();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const containerWidth = useElementWidth(containerRef);
-  const fontSize = containerWidth ? Math.round(containerWidth / 15) : 20;
-  const initStyle = { fontSize };
 
   const measurements = measurementsTexts[userData.language].map(
     (measurement) => {
@@ -36,11 +30,7 @@ function Measurements() {
     }
   );
 
-  return (
-    <div className={measurementsContainer} ref={containerRef} style={initStyle}>
-      {measurements}
-    </div>
-  );
+  return <div className={measurementsContainer}>{measurements}</div>;
 }
 
 export default Measurements;

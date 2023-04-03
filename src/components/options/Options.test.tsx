@@ -33,7 +33,6 @@ describe("Options component testing suite", () => {
           <div>
             <div
               class="_optionsContainer_e7a281"
-              style="font-size: 20px;"
             >
               <div
                 class="_interRadioWrapper_e7a281"
@@ -170,7 +169,6 @@ describe("Options component testing suite", () => {
         "container": <div>
           <div
             class="_optionsContainer_e7a281"
-            style="font-size: 20px;"
           >
             <div
               class="_interRadioWrapper_e7a281"

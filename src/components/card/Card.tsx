@@ -1,5 +1,6 @@
-import { useState, useRef } from "react";
-import useElementWidth from "../../hooks/useElementWidth";
+import { useState, useContext } from "react";
+import AppWidthContext from "../../contexts/AppWidthContext";
+import calcCardWidth from "../../utils/calcCardWidth";
 import styles from "./Card.module.scss";
 
 const { card, front, back, hidden, inverted } = styles;
@@ -9,18 +10,17 @@ type CardProps = {
   title2: string;
   definition: string;
   value: string | number;
-  position: string;
 };
 
-function Card({ title1, title2, definition, value, position }: CardProps) {
+function Card({ title1, title2, definition, value }: CardProps) {
   const [isFront, setIsFront] = useState(true);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const cardWidth = useElementWidth(cardRef);
-  const fontSize = cardWidth ? Math.round(cardWidth / 10) : 20;
-  const initStyle = { fontSize, gridArea: `c${position}` };
+  const appWidth = useContext(AppWidthContext);
+  const width = calcCardWidth(appWidth);
+  const fontSize = width / 10;
+  const initStyle = { fontSize, width };
 
   return (
-    <div className={card} ref={cardRef} style={initStyle}>
+    <div className={card} style={initStyle}>
       <div className={`${front} ${isFront ? "" : hidden}`} data-testid="front">
         <h2>{title1}</h2>
         <p>{value}</p>

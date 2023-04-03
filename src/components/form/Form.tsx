@@ -16,6 +16,7 @@ const buttonTexts: { [index: string]: string } = {
 function Form() {
   const { language } = useUserData();
   const dispatch = useUserDataDispatch();
+
   return (
     <form className={formContainer}>
       <div className={dataWrapper}>

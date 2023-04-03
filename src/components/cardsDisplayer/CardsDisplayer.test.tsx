@@ -31,11 +31,11 @@ describe("CardsDisplayer component testing suite", () => {
         "baseElement": <body>
           <div>
             <div
-              class="_grid_a7b8fb"
+              class="_cardsContainer_a7b8fb"
             >
               <div
                 class="_card_c39673"
-                style="font-size: 20px; grid-area: c1;"
+                style="font-size: 15px; width: 150px;"
               >
                 <div
                   class="_front_c39673 "
@@ -71,7 +71,7 @@ describe("CardsDisplayer component testing suite", () => {
               </div>
               <div
                 class="_card_c39673"
-                style="font-size: 20px; grid-area: c2;"
+                style="font-size: 15px; width: 150px;"
               >
                 <div
                   class="_front_c39673 "
@@ -107,7 +107,7 @@ describe("CardsDisplayer component testing suite", () => {
               </div>
               <div
                 class="_card_c39673"
-                style="font-size: 20px; grid-area: c3;"
+                style="font-size: 15px; width: 150px;"
               >
                 <div
                   class="_front_c39673 "
@@ -143,7 +143,7 @@ describe("CardsDisplayer component testing suite", () => {
               </div>
               <div
                 class="_card_c39673"
-                style="font-size: 20px; grid-area: c4;"
+                style="font-size: 15px; width: 150px;"
               >
                 <div
                   class="_front_c39673 "
@@ -179,7 +179,7 @@ describe("CardsDisplayer component testing suite", () => {
               </div>
               <div
                 class="_card_c39673"
-                style="font-size: 20px; grid-area: c5;"
+                style="font-size: 15px; width: 150px;"
               >
                 <div
                   class="_front_c39673 "
@@ -218,11 +218,11 @@ describe("CardsDisplayer component testing suite", () => {
         </body>,
         "container": <div>
           <div
-            class="_grid_a7b8fb"
+            class="_cardsContainer_a7b8fb"
           >
             <div
               class="_card_c39673"
-              style="font-size: 20px; grid-area: c1;"
+              style="font-size: 15px; width: 150px;"
             >
               <div
                 class="_front_c39673 "
@@ -258,7 +258,7 @@ describe("CardsDisplayer component testing suite", () => {
             </div>
             <div
               class="_card_c39673"
-              style="font-size: 20px; grid-area: c2;"
+              style="font-size: 15px; width: 150px;"
             >
               <div
                 class="_front_c39673 "
@@ -294,7 +294,7 @@ describe("CardsDisplayer component testing suite", () => {
             </div>
             <div
               class="_card_c39673"
-              style="font-size: 20px; grid-area: c3;"
+              style="font-size: 15px; width: 150px;"
             >
               <div
                 class="_front_c39673 "
@@ -330,7 +330,7 @@ describe("CardsDisplayer component testing suite", () => {
             </div>
             <div
               class="_card_c39673"
-              style="font-size: 20px; grid-area: c4;"
+              style="font-size: 15px; width: 150px;"
             >
               <div
                 class="_front_c39673 "
@@ -366,7 +366,7 @@ describe("CardsDisplayer component testing suite", () => {
             </div>
             <div
               class="_card_c39673"
-              style="font-size: 20px; grid-area: c5;"
+              style="font-size: 15px; width: 150px;"
             >
               <div
                 class="_front_c39673 "

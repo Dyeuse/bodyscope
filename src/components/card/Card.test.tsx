@@ -9,7 +9,6 @@ describe("Card component testing suite", () => {
         title2="Stand for"
         definition="A short explanation or definition"
         value="88"
-        position="1"
       />
     );
 
@@ -39,7 +38,6 @@ describe("Card component testing suite", () => {
         title2="Stand for"
         definition="A short explanation or definition"
         value="88"
-        position="1"
       />
     );
 
@@ -50,7 +48,7 @@ describe("Card component testing suite", () => {
           <div>
             <div
               class="_card_c39673"
-              style="font-size: 20px; grid-area: c1;"
+              style="font-size: 15px; width: 150px;"
             >
               <div
                 class="_front_c39673 "
@@ -89,7 +87,7 @@ describe("Card component testing suite", () => {
         "container": <div>
           <div
             class="_card_c39673"
-            style="font-size: 20px; grid-area: c1;"
+            style="font-size: 15px; width: 150px;"
           >
             <div
               class="_front_c39673 "

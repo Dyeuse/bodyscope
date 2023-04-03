@@ -42,7 +42,6 @@ describe("Form component testing suite", () => {
               >
                 <div
                   class="_optionsContainer_e7a281"
-                  style="font-size: 20px;"
                 >
                   <div
                     class="_interRadioWrapper_e7a281"
@@ -176,7 +175,6 @@ describe("Form component testing suite", () => {
                 </div>
                 <div
                   class="_measurementsContainer_e7ee1f"
-                  style="font-size: 20px;"
                 >
                   <div>
                     <label
@@ -257,7 +255,6 @@ describe("Form component testing suite", () => {
             >
               <div
                 class="_optionsContainer_e7a281"
-                style="font-size: 20px;"
               >
                 <div
                   class="_interRadioWrapper_e7a281"
@@ -391,7 +388,6 @@ describe("Form component testing suite", () => {
               </div>
               <div
                 class="_measurementsContainer_e7ee1f"
-                style="font-size: 20px;"
               >
                 <div>
                   <label

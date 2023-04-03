@@ -1,7 +1,7 @@
 import { useState, useEffect, RefObject } from "react";
 
 function useElementWidth(r: RefObject<HTMLDivElement>) {
-  const [elementWidth, setElementWidth] = useState<number>();
+  const [elementWidth, setElementWidth] = useState<number>(0);
 
   useEffect(() => {
     function handleElementResize() {
