@@ -1,9 +1,15 @@
+@use "../sass/variables" as v;
 @import "reset-css";
 
 @include reset-css();
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: blue;
+  background: v.$main-bg no-repeat fixed;
 }
 
 button,
