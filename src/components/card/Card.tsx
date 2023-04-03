@@ -31,7 +31,7 @@ function Card({ title1, title2, definition, value }: CardProps) {
       </div>
       <button type="button" onClick={() => setIsFront(!isFront)}>
         <img
-          src="src/media/flip.svg"
+          src="flip.svg"
           alt="Double arrows"
           className={isFront ? inverted : ""}
         />

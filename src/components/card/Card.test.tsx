@@ -78,7 +78,7 @@ describe("Card component testing suite", () => {
                 <img
                   alt="Double arrows"
                   class="_inverted_c39673"
-                  src="src/media/flip.svg"
+                  src="flip.svg"
                 />
               </button>
             </div>
@@ -117,7 +117,7 @@ describe("Card component testing suite", () => {
               <img
                 alt="Double arrows"
                 class="_inverted_c39673"
-                src="src/media/flip.svg"
+                src="flip.svg"
               />
             </button>
           </div>
