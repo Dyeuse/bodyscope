@@ -33,6 +33,7 @@ function Measurement({
         id={name}
         min={min}
         max={max}
+        required
       />
     </div>
   );

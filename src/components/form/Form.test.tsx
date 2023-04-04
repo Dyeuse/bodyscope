@@ -187,6 +187,7 @@ describe("Form component testing suite", () => {
                       max="220"
                       min="100"
                       name="height"
+                      required=""
                       type="number"
                       value=""
                     />
@@ -202,6 +203,7 @@ describe("Form component testing suite", () => {
                       max="220"
                       min="30"
                       name="weight"
+                      required=""
                       type="number"
                       value=""
                     />
@@ -217,6 +219,7 @@ describe("Form component testing suite", () => {
                       max="220"
                       min="30"
                       name="waist"
+                      required=""
                       type="number"
                       value=""
                     />
@@ -232,6 +235,7 @@ describe("Form component testing suite", () => {
                       max="80"
                       min="20"
                       name="neck"
+                      required=""
                       type="number"
                       value=""
                     />
@@ -400,6 +404,7 @@ describe("Form component testing suite", () => {
                     max="220"
                     min="100"
                     name="height"
+                    required=""
                     type="number"
                     value=""
                   />
@@ -415,6 +420,7 @@ describe("Form component testing suite", () => {
                     max="220"
                     min="30"
                     name="weight"
+                    required=""
                     type="number"
                     value=""
                   />
@@ -430,6 +436,7 @@ describe("Form component testing suite", () => {
                     max="220"
                     min="30"
                     name="waist"
+                    required=""
                     type="number"
                     value=""
                   />
@@ -445,6 +452,7 @@ describe("Form component testing suite", () => {
                     max="80"
                     min="20"
                     name="neck"
+                    required=""
                     type="number"
                     value=""
                   />

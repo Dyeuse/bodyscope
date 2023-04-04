@@ -16,20 +16,25 @@ const buttonTexts: { [index: string]: string } = {
 function Form() {
   const { language } = useUserData();
   const dispatch = useUserDataDispatch();
+  const handleCalculate = () => {
+    const allValuesAreOK = document.querySelector("form")?.checkValidity();
+    if (allValuesAreOK) {
+      dispatch({ type: "calculate" });
+    }
+  };
 
   return (
-    <form className={formContainer}>
+    <form
+      className={formContainer}
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <div className={dataWrapper}>
         <Options />
         <Measurements />
       </div>
-      <button
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch({ type: "calculate" });
-        }}
-      >
+      <button type="submit" onClick={handleCalculate}>
         {buttonTexts[language]}
       </button>
     </form>
