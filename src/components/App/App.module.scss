@@ -2,13 +2,15 @@
 @use "../../sass/variables" as v;
 
 .mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   padding: 20px;
   color: v.$main-color;
 
   .appWrapper {
     @include m.transparent;
-    margin: auto;
     border-radius: 5px;
     box-shadow: v.$main-shadow;
     max-width: 790px;
