@@ -17,7 +17,10 @@ function App() {
     <div className={mainContainer}>
       <div className={appWrapper} ref={appRef} style={initStyle}>
         <AppWidthContext.Provider value={appWidth}>
-          <h1>BodyScope</h1>
+          <header>
+            <img src="check.svg" alt="A double check logo" />
+            <h1>BodyScope</h1>
+          </header>
           <UserDataProvider>
             <Form />
             <CardsDisplayer />
