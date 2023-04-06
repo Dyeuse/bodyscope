@@ -27,5 +27,8 @@
     font-size: 0.8em;
     letter-spacing: 1px;
     text-transform: capitalize;
+    &:focus {
+      outline: 2px solid rgba(v.$secondary-color, 0.4);
+    }
   }
 }

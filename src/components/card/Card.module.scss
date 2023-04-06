@@ -1,4 +1,5 @@
 @use "../../sass/mixins" as m;
+@use "../../sass/variables" as v;
 
 .card {
   position: relative;
@@ -55,14 +56,18 @@
 
   button {
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     z-index: 1;
     transition: 0.05s ease-in-out;
+    border-radius: 5px;
     &:hover {
       transform: scale(1.2);
     }
     &:active {
       transform: scale(0.8);
+    }
+    &:focus {
+      outline: 2px solid rgba(v.$main-color, 0.8);
     }
     img {
       width: 1.6em;
