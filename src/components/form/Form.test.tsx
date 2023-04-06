@@ -17,7 +17,7 @@ describe("Form component testing suite", () => {
 
     expect(male).toBeVisible();
     expect(body).toBeVisible();
-    expect(body).toHaveDisplayValue("auto calc");
+    expect(body).toHaveDisplayValue("automatic calculation");
     expect(neck).toBeVisible();
     expect(button).toBeVisible();
   });
@@ -124,27 +124,27 @@ describe("Form component testing suite", () => {
                       <option
                         value="1.2"
                       >
-                        sedentary
+                        sedentary | desk job
                       </option>
                       <option
                         value="1.375"
                       >
-                        lightly active
+                        lightly active | 1-3/week
                       </option>
                       <option
                         value="1.55"
                       >
-                        moderately active
+                        moderately active | 6-7/week
                       </option>
                       <option
                         value="1.725"
                       >
-                        very active
+                        very active | 2/day or hard 1/day
                       </option>
                       <option
                         value="1.9"
                       >
-                        extremely active
+                        extra active | hard 2/day or +
                       </option>
                     </select>
                   </div>
@@ -163,12 +163,12 @@ describe("Form component testing suite", () => {
                       <option
                         value="auto"
                       >
-                        auto calc
+                        automatic calculation
                       </option>
                       <option
                         value="specific"
                       >
-                        specific
+                        specific value
                       </option>
                     </select>
                   </div>
@@ -341,27 +341,27 @@ describe("Form component testing suite", () => {
                     <option
                       value="1.2"
                     >
-                      sedentary
+                      sedentary | desk job
                     </option>
                     <option
                       value="1.375"
                     >
-                      lightly active
+                      lightly active | 1-3/week
                     </option>
                     <option
                       value="1.55"
                     >
-                      moderately active
+                      moderately active | 6-7/week
                     </option>
                     <option
                       value="1.725"
                     >
-                      very active
+                      very active | 2/day or hard 1/day
                     </option>
                     <option
                       value="1.9"
                     >
-                      extremely active
+                      extra active | hard 2/day or +
                     </option>
                   </select>
                 </div>
@@ -380,12 +380,12 @@ describe("Form component testing suite", () => {
                     <option
                       value="auto"
                     >
-                      auto calc
+                      automatic calculation
                     </option>
                     <option
                       value="specific"
                     >
-                      specific
+                      specific value
                     </option>
                   </select>
                 </div>
