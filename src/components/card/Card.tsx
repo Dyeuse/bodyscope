@@ -9,10 +9,11 @@ type CardProps = {
   title1: string;
   title2: string;
   definition: string;
+  info: string;
   value: string | number;
 };
 
-function Card({ title1, title2, definition, value }: CardProps) {
+function Card({ title1, title2, definition, info, value }: CardProps) {
   const [isFront, setIsFront] = useState(true);
   const appWidth = useContext(AppWidthContext);
   const width = calcCardWidth(appWidth);
@@ -28,6 +29,9 @@ function Card({ title1, title2, definition, value }: CardProps) {
       <div className={`${back} ${isFront ? hidden : ""}`} data-testid="back">
         <h3>{title2}</h3>
         <p>{definition}</p>
+        <a href={info} target="_blank" rel="noreferrer">
+          ?
+        </a>
       </div>
       <button type="button" onClick={() => setIsFront(!isFront)}>
         <img

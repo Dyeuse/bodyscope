@@ -12,6 +12,7 @@ export function getFakeCards(n: number): readonly ReactNode[] {
         title2="Stand for"
         definition={`Test${c} / short explanation or definition`}
         value={`${c}${c}`}
+        info=""
       />
     );
   }

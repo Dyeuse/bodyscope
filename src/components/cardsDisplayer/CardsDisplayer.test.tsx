@@ -6,7 +6,7 @@ describe("CardsDisplayer component testing suite", () => {
     render(<CardsDisplayer />);
 
     const allTitles = screen.getAllByRole("heading");
-    const backTitles = screen.getAllByRole("heading", { name: /Stand for/ });
+    const backTitles = screen.getAllByRole("heading", { name: /Acronym/ });
     const BMITitle = screen.getByRole("heading", { name: /BMI/ });
     const flipButtons = screen.getAllByAltText(/Double arrows/);
 
@@ -53,11 +53,18 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="back"
                 >
                   <h3>
-                    Stand for
+                    Acronym
                   </h3>
                   <p>
                     Body Mass Index
                   </p>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Body_mass_index"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    ?
+                  </a>
                 </div>
                 <button
                   type="button"
@@ -89,11 +96,18 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="back"
                 >
                   <h3>
-                    Stand for
+                    Acronym
                   </h3>
                   <p>
                     Body Fat Percentage
                   </p>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Body_fat_percentage"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    ?
+                  </a>
                 </div>
                 <button
                   type="button"
@@ -125,11 +139,18 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="back"
                 >
                   <h3>
-                    Stand for
+                    Acronym
                   </h3>
                   <p>
                     Fat Free Mass Index (ajusted)
                   </p>
+                  <a
+                    href="https://egym.com/us/blog/fat-free-mass-index-ffmi"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    ?
+                  </a>
                 </div>
                 <button
                   type="button"
@@ -161,11 +182,18 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="back"
                 >
                   <h3>
-                    Stand for
+                    Acronym
                   </h3>
                   <p>
                     Basal Metabolic Rate
                   </p>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Basal_metabolic_rate"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    ?
+                  </a>
                 </div>
                 <button
                   type="button"
@@ -197,11 +225,18 @@ describe("CardsDisplayer component testing suite", () => {
                   data-testid="back"
                 >
                   <h3>
-                    Stand for
+                    Acronym
                   </h3>
                   <p>
                     Total Daily Energy Expenditure
                   </p>
+                  <a
+                    href="https://www.k-state.edu/paccats/Contents/PA/PDF/Physical%20Activity%20and%20Controlling%20Weight.pdf"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    ?
+                  </a>
                 </div>
                 <button
                   type="button"
@@ -240,11 +275,18 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="back"
               >
                 <h3>
-                  Stand for
+                  Acronym
                 </h3>
                 <p>
                   Body Mass Index
                 </p>
+                <a
+                  href="https://en.wikipedia.org/wiki/Body_mass_index"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ?
+                </a>
               </div>
               <button
                 type="button"
@@ -276,11 +318,18 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="back"
               >
                 <h3>
-                  Stand for
+                  Acronym
                 </h3>
                 <p>
                   Body Fat Percentage
                 </p>
+                <a
+                  href="https://en.wikipedia.org/wiki/Body_fat_percentage"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ?
+                </a>
               </div>
               <button
                 type="button"
@@ -312,11 +361,18 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="back"
               >
                 <h3>
-                  Stand for
+                  Acronym
                 </h3>
                 <p>
                   Fat Free Mass Index (ajusted)
                 </p>
+                <a
+                  href="https://egym.com/us/blog/fat-free-mass-index-ffmi"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ?
+                </a>
               </div>
               <button
                 type="button"
@@ -348,11 +404,18 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="back"
               >
                 <h3>
-                  Stand for
+                  Acronym
                 </h3>
                 <p>
                   Basal Metabolic Rate
                 </p>
+                <a
+                  href="https://en.wikipedia.org/wiki/Basal_metabolic_rate"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ?
+                </a>
               </div>
               <button
                 type="button"
@@ -384,11 +447,18 @@ describe("CardsDisplayer component testing suite", () => {
                 data-testid="back"
               >
                 <h3>
-                  Stand for
+                  Acronym
                 </h3>
                 <p>
                   Total Daily Energy Expenditure
                 </p>
+                <a
+                  href="https://www.k-state.edu/paccats/Contents/PA/PDF/Physical%20Activity%20and%20Controlling%20Weight.pdf"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ?
+                </a>
               </div>
               <button
                 type="button"

@@ -6,15 +6,16 @@ describe("Card component testing suite", () => {
     render(
       <Card
         title1="Test"
-        title2="Stand for"
+        title2="Acronym"
         definition="A short explanation or definition"
         value="88"
+        info=""
       />
     );
 
     const frontTitle = screen.getByRole("heading", { name: "Test" });
     const result = screen.getByText(/88/);
-    const backTitle = screen.getByRole("heading", { name: "Stand for" });
+    const backTitle = screen.getByRole("heading", { name: "Acronym" });
     const definition = screen.getByText(/A short explanation or definition/);
     const flipButton = screen.getByAltText(/Double arrows/);
 
@@ -35,9 +36,10 @@ describe("Card component testing suite", () => {
     const card = render(
       <Card
         title1="Test"
-        title2="Stand for"
+        title2="Acronym"
         definition="A short explanation or definition"
         value="88"
+        info=""
       />
     );
 
@@ -66,11 +68,18 @@ describe("Card component testing suite", () => {
                 data-testid="back"
               >
                 <h3>
-                  Stand for
+                  Acronym
                 </h3>
                 <p>
                   A short explanation or definition
                 </p>
+                <a
+                  href=""
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  ?
+                </a>
               </div>
               <button
                 type="button"
@@ -105,11 +114,18 @@ describe("Card component testing suite", () => {
               data-testid="back"
             >
               <h3>
-                Stand for
+                Acronym
               </h3>
               <p>
                 A short explanation or definition
               </p>
+              <a
+                href=""
+                rel="noreferrer"
+                target="_blank"
+              >
+                ?
+              </a>
             </div>
             <button
               type="button"
