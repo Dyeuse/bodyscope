@@ -11,7 +11,6 @@ Auteur : <ins>Dyeuse</ins>
 ## Description
 
 This is a skill demonstrating project regarding the usage of ReactJS and its most recent functionalities. The application allows the user to calculate a variety of body related indices and percentages (lean body mass, fat mass, basal metabolic...).
-Notice
 
 ## Main tools
 
